@@ -1,0 +1,173 @@
+/* ===== v3g: sus notas del 9 oct (3:14) ===== */
+/* toldos alternados, mismo estilo de pastillas con filo dorado */
+.toldo{height:48px; margin-bottom:-12px; background:url("media/v3g/banda-rosa.webp") repeat-x 0 0 / auto 100%; filter:none}
+@media (min-width:900px){ .toldo{height:68px; margin-bottom:-18px} }
+.vidrio-band{height:clamp(50px,6vw,72px); background:url("media/v3g/banda-cielo.webp") 0 0 / auto 100% repeat-x; filter:none}
+.services{padding-top:calc(clamp(50px,6vw,72px) + 40px)}
+.banda{position:absolute; top:0; left:0; right:0; max-width:none!important; margin:0!important; height:clamp(46px,5.4vw,66px); background:0 0 / auto 100% repeat-x; pointer-events:none; z-index:2}
+.banda-cielo{background-image:url("media/v3g/banda-cielo.webp")}
+.banda-rosa{background-image:url("media/v3g/banda-rosa.webp")}
+.studio,.resenas{position:relative; overflow:hidden}
+.studio{padding-top:calc(clamp(46px,5.4vw,66px) + clamp(40px,6vw,80px))}
+.resenas{padding-top:calc(clamp(46px,5.4vw,66px) + clamp(40px,6vw,80px))}
+/* elementos chiquitos */
+.el{position:absolute; max-width:none!important; margin:0!important; height:auto; pointer-events:none; z-index:1; animation:flota 8s ease-in-out infinite}
+.el-luna{width:46px; right:6%; top:calc(clamp(46px,5.4vw,66px) + 18px); filter:drop-shadow(0 8px 10px rgba(180,140,40,.22))}
+.el-globo{width:40px; left:5%; top:calc(clamp(46px,5.4vw,66px) + 26px); animation-delay:-3s; filter:drop-shadow(0 10px 10px rgba(120,150,190,.22))}
+.el-cereza{width:50px; right:6%; top:calc(clamp(46px,5.4vw,66px) + 16px); filter:drop-shadow(0 8px 10px rgba(179,38,58,.2))}
+.el-destello{width:30px; left:7%; top:calc(clamp(46px,5.4vw,66px) + 30px); animation-delay:-2s}
+@media (min-width:900px){ .el-luna{width:70px; right:12%} .el-globo{width:58px; left:10%} .el-cereza{width:72px; right:12%} .el-destello{width:44px; left:12%} }
+.studio .section-head,.resenas .section-head{position:relative; z-index:2}
+
+/* HERO: sin vidrio; Polaroids protagonistas; carpa chiquita y sólida */
+.hero .hero-collage{min-height:0; height:clamp(560px,150vw,620px)}
+.hero .hero-collage .p-main{left:1%; top:4%; width:58%; transform:rotate(-4deg); z-index:3}
+.hero .hero-collage .p-side{right:0; top:34%; width:52%; transform:rotate(5deg); z-index:4}
+.hero .carpa3d{top:0; right:2%; width:30%; z-index:2; perspective:none}
+.hero .carpa3d img.carpa-img{opacity:1; filter:drop-shadow(0 10px 12px rgba(107,30,44,.18))}
+.hero .carpa3d img.luna3d{width:34%; left:-22%; top:6%}
+.hero .hero-collage .swatches{left:2px; right:auto; bottom:0}
+.hero .hero-collage .note{right:4px; bottom:-6px}
+@media (min-width:900px){
+  .hero .hero-collage{height:660px; max-width:640px}
+  .hero .hero-collage .p-main{left:0; top:2%; width:300px}
+  .hero .hero-collage .p-side{right:4%; top:30%; width:290px}
+  .hero .carpa3d{top:-2%; right:6%; width:170px}
+  .hero .hero-collage .swatches{left:4%; bottom:2%}
+  .hero .hero-collage .note{right:0; bottom:0}
+}
+
+/* QUIÉN SOY: la muñequita al frente, la cherry en la pila (sin moño) */
+.about .portrait-slot > img:first-of-type{position:relative; z-index:6}
+.about .portrait-slot .acc-corazon{position:absolute; z-index:1; width:100%; top:0; left:0; right:auto; bottom:auto; filter:none}
+.about .portrait-slot .acc-corazon{transform:translate(-9%,5%) rotate(-9deg)}
+.about .portrait-slot img.acc-sello{position:absolute; z-index:1; width:46%; aspect-ratio:auto; object-fit:contain; padding:0; background:none; -webkit-mask:none; mask:none; top:-13%; right:-12%; left:auto; bottom:auto; transform:rotate(9deg); filter:drop-shadow(0 6px 8px rgba(214,120,140,.25))}
+.about .portrait-slot img.acc-cereza{position:absolute; z-index:9; width:78px; aspect-ratio:auto; object-fit:contain; padding:0; background:none; -webkit-mask:none; mask:none; top:auto; left:auto; right:-20px; bottom:30px; transform:rotate(10deg); filter:drop-shadow(0 6px 8px rgba(179,38,58,.22))}
+.about .portrait-slot .acc-mono{display:none}
+.about .portrait-slot figcaption{z-index:7}
+.about .portrait-slot .washi{z-index:8}
+
+/* PROYECTOS: su estampa con fondo crema limpio */
+.acc-y{filter:drop-shadow(0 6px 8px rgba(179,38,58,.16))}
+
+/* CONTACTO: sello de la carta sin halo oscuro */
+.carta .sello{filter:drop-shadow(0 4px 6px rgba(214,120,140,.28))}
+.gracias-sello{filter:drop-shadow(0 4px 6px rgba(214,120,140,.28))}
+
+/* firma rosa, limpia, sin sombra; debajo de "Te leo pronto," */
+.firma{filter:none!important; box-shadow:none!important; background:none!important}
+.carta-posdata{flex-direction:column; align-items:flex-end; gap:2px}
+.firma-carta{width:140px; margin-right:-4px}
+
+.el-conejita{width:44px; right:5%; top:auto; bottom:22px; animation:none; filter:drop-shadow(0 8px 8px rgba(214,120,140,.22))}
+@media (min-width:900px){ .el-conejita{width:64px; right:8%; bottom:36px} }
+.media-carpa{display:block; width:110px; height:auto; margin:0 auto 6px; filter:drop-shadow(0 8px 10px rgba(179,38,58,.18))}
+@media (min-width:900px){ .media-carpa{width:150px} }
+.resenas .section-head{text-align:center}
+.carta .sello img{filter:none}
+.wordmark img.wm-y{width:auto}
+
+.about .portrait-slot > img.sin-marco{padding:0; background:none; -webkit-mask:none; mask:none}
+
+/* v3h: regresa el arco azul de puntitos detrás de las Polaroids (opaco, sin vidrio) */
+.hero .hero-collage .arco{display:block; z-index:1; inset:7% 5% 8% 3%;
+  background-color:#CFE1F0;
+  background-image:linear-gradient(155deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,.1) 38%, rgba(255,255,255,0) 60%, rgba(120,170,205,.16) 100%),
+    radial-gradient(#fff 2px, transparent 2.6px), radial-gradient(#fff 2px, transparent 2.6px);
+  background-size:100% 100%, 26px 26px, 26px 26px; background-position:0 0, 0 0, 13px 13px;
+  -webkit-backdrop-filter:none; backdrop-filter:none; opacity:1}
+@media (min-width:900px){ .hero .hero-collage .arco{inset:6% 4% 7% 2%} }
+/* v3h: sello rojo en la carta */
+.carta .sello{width:88px}
+@media (min-width:640px){ .carta .sello{width:106px} }
+
+/* v3i: carpita en medio, sobre el arco (círculo amarillo), no en la esquina */
+.hero .carpa3d{top:10%; right:11%; width:26%}
+.hero .carpa3d img.luna3d{width:30%; left:-16%; top:-8%}
+@media (min-width:900px){
+  .hero .carpa3d{top:8.5%; right:15%; width:140px}
+}
+/* v3i: botón "Enviar mi carta" sin brillo: relleno sólido cereza, sombra suave */
+.btn-carta::before{display:none!important; content:none}
+.btn-carta{background:#B3263A; -webkit-backdrop-filter:none; backdrop-filter:none; border:0; box-shadow:0 8px 16px -10px rgba(179,38,58,.55); text-shadow:none}
+.btn-carta:hover{background:#9C2134}
+
+/* v3j: carpita más grande (tamaño del círculo naranja), mismo lugar arriba a la derecha del arco; luna más grande junto a ella */
+.hero .carpa3d{top:4%; right:1%; width:34%; z-index:5}
+.hero .carpa3d img.luna3d{width:50%; left:-36%; top:-34%}
+/* v3j: su estampa rosa Y en el hueco de abajo a la izquierda del arco */
+.hero .hero-estampa{position:absolute; z-index:2; top:69%; left:5%; width:37.5%; max-width:none; height:auto; pointer-events:none; transform:rotate(-6deg); filter:drop-shadow(0 6px 7px rgba(214,120,140,.24))}
+@media (min-width:900px){
+  .hero .hero-collage{height:790px}
+  .hero .hero-collage .p-side{top:186px}
+  .hero .carpa3d{top:2.5%; right:9%; width:200px}
+  .hero .carpa3d img.luna3d{width:46%; left:-30%; top:-30%}
+  .hero .hero-estampa{top:568px; left:56px; width:142px}
+}
+/* v3j: "Te leo pronto," y la firma centradas abajo del botón "Enviar mi carta" */
+.carta-posdata{display:flex; flex-direction:column; align-items:center!important; justify-content:center; text-align:center; gap:2px; margin:18px auto 0; width:100%}
+.firma-carta{margin:0 auto!important}
+@media (min-width:521px){ .carta-posdata{width:max-content; min-width:206px; margin:18px 0 0 auto} }
+/* v3k: sello rojo en el hueco de abajo a la izquierda del arco (en lugar de la estampa rosa) */
+.hero .hero-estampa.hero-sello{top:69%; left:6.6%; width:29.5%; margin-top:9.6%; transform:rotate(-5deg); filter:drop-shadow(0 5px 7px rgba(214,120,140,.30))}
+@media (min-width:900px){
+  .hero .hero-estampa.hero-sello{top:589px; left:43px; width:150px; margin-top:0; transform:rotate(-4deg)}
+}
+
+/* v3l: sello rojo más grande, que llene su círculo verde (abajo a la izquierda del arco) */
+.hero .hero-collage{height:calc(clamp(560px,150vw,620px) + 12px)}
+.hero .hero-estampa.hero-sello{top:69%; left:-1.5%; width:43%; margin-top:1.6%; z-index:5}
+@media (min-width:900px){
+  .hero .hero-collage{height:830px}
+  .hero .hero-estampa.hero-sello{top:580px; left:18px; width:200px; margin-top:0}
+}
+
+/* ---------- v3m (Claudia 5:00): Quien soy sin carta de atras, sello completo; nota a mano (Caveat); yosclau completo; carpa Resenas mas grande; globo recortado de nuevo ---------- */
+@font-face{font-family:'Caveat'; font-style:normal; font-weight:500; font-display:swap; src:url('fonts/caveat-500.woff2') format('woff2')}
+.about .portrait-slot .acc-corazon{display:none!important}
+.about .portrait-slot img.acc-sello{z-index:10; width:30%; top:-7%; right:-8%; transform:rotate(9deg); filter:drop-shadow(0 5px 7px rgba(214,120,140,.30))}
+.about-text{overflow:visible}
+.firma-about{width:132px; max-width:calc(100% - 24px); margin:26px 22px 6px auto; overflow:visible}
+@media (min-width:900px){ .firma-about{width:160px; margin-right:12px} }
+.nota p.script{font-family:'Caveat','Bradley Hand','Segoe Print',cursive; font-weight:500; font-size:30px; line-height:1.08; letter-spacing:.2px; color:var(--vino,#6b1e2c)}
+.nota p .ln{display:inline-block}
+.nota p .ln1{transform:rotate(-2deg) translateX(1px)}
+.nota p .ln2{transform:rotate(1.5deg) translateX(6px)}
+.nota p .ln3{transform:rotate(-1deg) translateX(-1px)}
+.nota p .ln4{transform:rotate(2deg) translateX(4px)}
+.nota p .ln5{transform:rotate(-2.5deg) translateX(2px)}
+.media-carpa{width:210px; margin:0 auto 10px}
+@media (min-width:900px){ .media-carpa{width:280px; margin-bottom:12px} }
+
+/* v3m: Estudio eyebrow sin linea, globo con aire */
+.studio .eyebrow::before{content:none!important; display:none!important}
+.studio .section-head .eyebrow{padding-left:58px}
+/* v3m: nota a lapiz */
+.nota p.script{color:#4a4440; filter:url(#lapiz); text-shadow:0 0 .6px rgba(74,68,64,.55), .4px .3px 0 rgba(74,68,64,.18)}
+@media (min-width:900px){ .studio .section-head .eyebrow{padding-left:calc(10vw + 80px - max(40px, (100vw - 1180px) / 2))} }
+.el-globo{width:34px; top:calc(clamp(46px,5.4vw,66px) + 14px)}
+.studio .section-head .eyebrow{padding-left:52px}
+@media (min-width:900px){ .el-globo{width:58px; top:calc(clamp(46px,5.4vw,66px) + 26px)} .studio .section-head .eyebrow{padding-left:calc(10vw + 80px - max(40px, (100vw - 1180px) / 2))} }
+
+/* v3n: lettering completo */
+.firma-about.firma-full{display:block; width:min(326px, calc(100% - 16px)); max-width:none; height:auto; aspect-ratio:840/354; object-fit:contain; overflow:visible; margin:24px auto 8px; transform:rotate(-3deg); transform-origin:center}
+@media (min-width:900px){ .firma-about.firma-full{width:min(420px, 100%); margin:28px 0 8px auto} }
+
+/* v3n: notita se escribe a lapiz */
+.nota.pre-escribe p .ln{clip-path:inset(-6px 100% -8px -4px); -webkit-clip-path:inset(-6px 100% -8px -4px)}
+.nota.pre-escribe.escribe p .ln{animation:escribir .8s cubic-bezier(.45,.1,.35,1) forwards}
+.nota.escribe p .ln2{animation-delay:.75s}
+.nota.escribe p .ln3{animation-delay:1.5s}
+.nota.escribe p .ln4{animation-delay:2.25s}
+.nota.escribe p .ln5{animation-delay:3s}
+@keyframes escribir{from{clip-path:inset(-6px 100% -8px -4px); -webkit-clip-path:inset(-6px 100% -8px -4px)} to{clip-path:inset(-6px -8px -8px -4px); -webkit-clip-path:inset(-6px -8px -8px -4px)}}
+@media (prefers-reduced-motion:reduce){ .nota.pre-escribe p .ln{clip-path:none!important; -webkit-clip-path:none!important; animation:none!important} }
+.media-carpa{display:block; margin-left:auto!important; margin-right:auto!important; align-self:center; justify-self:center}
+
+/* v3p: Reseñas carpa centered and bigger */
+.resenas .section-head .media-carpa{display:block; width:250px; max-width:72vw; height:auto; margin:0 auto 10px!important; position:static; left:auto; right:auto; transform:none; float:none}
+@media (min-width:900px){ .resenas .section-head .media-carpa{width:330px; margin-bottom:12px!important} }
+
+/* v3q: celular animado en lugar de la polaroid principal */
+.hero .hero-collage .hero-phone{position:absolute; left:-25px; top:22px; width:222px; height:auto; max-width:none; transform:rotate(-4deg); z-index:4; pointer-events:none; filter:drop-shadow(0 10px 14px rgba(70,40,60,.22))}
+@media (min-width:900px){ .hero .hero-collage .hero-phone{left:-55px; top:34px; width:350px} }
