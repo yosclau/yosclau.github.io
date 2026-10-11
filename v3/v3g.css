@@ -171,3 +171,13 @@
 /* v3q: celular animado en lugar de la polaroid principal */
 .hero .hero-collage .hero-phone{position:absolute; left:-25px; top:22px; width:222px; height:auto; max-width:none; transform:rotate(-4deg); z-index:4; pointer-events:none; filter:drop-shadow(0 10px 14px rgba(70,40,60,.22))}
 @media (min-width:900px){ .hero .hero-collage .hero-phone{left:-55px; top:34px; width:350px} }
+
+/* v3t: polaroid del circo animada (video recortado) en lugar de la ilustrada; el cel de flores usa la misma caja */
+.hero .hero-collage .p-video{background:none; padding:0; box-shadow:none; width:62%; top:31%; right:-2%; transform:rotate(1.5deg); pointer-events:none}
+.hero .hero-collage .p-video picture{display:block}
+.hero .hero-collage .p-video img{display:block; width:100%; height:auto; max-width:none; aspect-ratio:auto!important; object-fit:contain; filter:drop-shadow(0 10px 12px rgba(70,40,60,.16))}
+.hero .hero-collage .p-video figcaption{position:static; display:block; margin:-12px 0 0; padding-left:9%; text-align:center; white-space:nowrap; font-size:20px; line-height:1; color:var(--burgundy,#6b1e2c); transform:rotate(-2deg)}
+@media (min-width:900px){
+  .hero .hero-collage .p-video{width:330px; top:170px; right:3%}
+  .hero .hero-collage .p-video figcaption{font-size:24px; margin-top:-16px}
+}
