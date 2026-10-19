@@ -604,9 +604,8 @@
     <form class="carta" id="carta" action="https://formsubmit.co/yosclauuu@hotmail.com" method="POST" accept-charset="UTF-8" aria-labelledby="carta-saludo">
       <input type="hidden" name="_subject" value="Nueva carta desde yosclau.github.io/v3">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://yosclau.github.io/v3/#gracias">
-      <input type="text" name="_honey" class="carta-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="text" name="_honey" class="carta-honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <div class="carta-top">
         <p class="carta-para"><span>Para</span> Clau González<br>Chicago, Illinois</p>
@@ -650,6 +649,7 @@
       </div>
       <div class="carta-posdata"><span>Te leo pronto,</span><img class="firma firma-carta" src="media/brand/firma-yosclau.webp" width="480" height="198" alt="Firma: yosclau" loading="lazy"></div>
     </form>
+    <script>(function(){var f=document.getElementById('carta');if(!f)return;var t0=Date.now();f.addEventListener('submit',function(e){if(Date.now()-t0<3000){e.preventDefault();}});})();</script>
   </div>
   <p class="contact-or">¿Prefieres escribirme directo?</p>
   <div class="ctas center">
