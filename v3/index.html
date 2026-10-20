@@ -651,12 +651,33 @@
     </form>
     <script>(function(){var f=document.getElementById('carta');if(!f)return;var t0=Date.now();f.addEventListener('submit',function(e){if(Date.now()-t0<3000){e.preventDefault();}});})();</script>
   </div>
-  <p class="contact-or">¿Prefieres escribirme directo?</p>
-  <div class="ctas center">
-    <a class="btn btn-cream" href="mailto:hola@yosclau.com">Escríbeme por correo</a>
-    <a class="btn btn-ghost" href="https://calendly.com/yosclauuu/30min" target="_blank" rel="noopener">Agenda una llamada</a>
-    <a class="btn btn-ghost" href="https://instagram.com/yosclau" target="_blank" rel="noopener">Instagram</a>
+<!-- YS-DIRECTO start -->
+  <style>
+  .ys-directo{max-width:640px;margin:40px auto 0;text-align:center}
+  .ys-directo-t{font-family:'Gloock',Georgia,serif;font-weight:400;font-size:clamp(24px,5.4vw,32px);line-height:1.15;color:#fff;margin:0 0 16px}
+  .ys-directo-s{font-family:'Work Sans',system-ui,sans-serif;font-size:16px;color:rgba(251,247,240,.82);margin:0 0 18px}
+  .ys-directo-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;list-style:none;margin:0;padding:0}
+  .ys-directo-row li{margin:0}
+  .ys-dbtn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:13px 22px;border-radius:999px;background:#fff;color:#6B1324;font-family:'Work Sans',system-ui,sans-serif;font-weight:600;font-size:16px;line-height:1.1;text-decoration:none;border:2px solid #fff;transition:background .2s ease,color .2s ease}
+  .ys-dbtn svg{width:22px;height:22px;flex:none}
+  .ys-dbtn:hover{background:#F4ECDF}
+  .ys-dbtn-wa{background:#6B1324;color:#fff}
+  .ys-dbtn-wa:hover{background:#86182e;color:#fff}
+  .ys-dbtn:focus-visible{outline:3px solid #EDB9C0;outline-offset:3px}
+  .ys-directo-cal{font-family:'Work Sans',system-ui,sans-serif;font-size:15px;color:rgba(251,247,240,.8);margin:16px 0 0}
+  .ys-directo-cal a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+  @media (max-width:520px){.ys-directo-row{flex-direction:column;align-items:stretch;padding:0 6px}.ys-dbtn{width:100%}}
+  </style>
+  <div class="ys-directo" id="directo">
+    <p class="ys-directo-t">¿Prefieres escribirme directo?</p>
+    <ul class="ys-directo-row">
+      <li><a class="ys-dbtn ys-dbtn-wa" href="https://wa.me/14708409308?text=%C2%A1Hola%20Claudia%21%20Vi%20tu%20web%20y%20quiero%20cotizar%20un%20proyecto%20%F0%9F%98%8A" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></a></li>
+      <li><a class="ys-dbtn" href="mailto:hola@yosclau.com?subject=Cotizaci%C3%B3n" aria-label="Escríbeme a hola@yosclau.com"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>hola@yosclau.com</span></a></li>
+      <li><a class="ys-dbtn" href="https://instagram.com/yosclau" target="_blank" rel="noopener" aria-label="Instagram @yosclau"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg><span>@yosclau</span></a></li>
+    </ul>
+    <p class="ys-directo-cal">o <a href="https://calendly.com/yosclauuu/30min" target="_blank" rel="noopener">agenda una llamada de 30 min</a></p>
   </div>
+  <!-- YS-DIRECTO end -->
   <p class="fe script">Yo te tengo fe <span aria-hidden="true">✦</span></p>
 </section>
 </main>
@@ -700,5 +721,27 @@ n.classList.add('pre-escribe');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){n.classList.add('escribe');io.disconnect();}});},{threshold:0.45});
 io.observe(n);})();
 </script>
+<!-- YS-WA-FAB start (boton flotante WhatsApp) -->
+<style>
+.ys-wa-fab{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(16px,calc(env(safe-area-inset-bottom) + 10px));z-index:900;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#6B1324;color:#fff;border:2px solid #fff;box-shadow:0 4px 12px rgba(46,14,20,.28);text-decoration:none;-webkit-tap-highlight-color:transparent;transition:opacity .25s ease,visibility .25s}
+.ys-wa-fab svg{width:28px;height:28px;display:block}
+.ys-wa-fab:hover{background:#86182e}
+.ys-wa-fab:focus-visible{outline:3px solid #EDB9C0;outline-offset:3px}
+.ys-wa-fab.ys-oculto{opacity:0;visibility:hidden;pointer-events:none}
+@media print{.ys-wa-fab{display:none}}
+</style>
+<a class="ys-wa-fab" id="ys-wa-fab" href="https://wa.me/14708409308?text=%C2%A1Hola%20Claudia%21%20Vi%20tu%20web%20y%20quiero%20cotizar%20un%20proyecto%20%F0%9F%98%8A" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp" title="Escríbeme por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+<script>
+(function(){var b=document.getElementById('ys-wa-fab');if(!b)return;
+var vis=new Set(),foco=false;
+function upd(){b.classList.toggle('ys-oculto',foco||vis.size>0);}
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target);});upd();},{rootMargin:'0px 0px -10px 0px'});
+document.querySelectorAll('.footer,footer,.ys-directo,.btn-carta,form button[type=submit]').forEach(function(el){io.observe(el);});}
+document.addEventListener('focusin',function(e){var t=e.target;foco=!!(t&&t.matches&&t.matches('input,textarea,select'));upd();});
+document.addEventListener('focusout',function(){foco=false;setTimeout(upd,60);});
+})();
+</script>
+<!-- YS-WA-FAB end -->
 </body>
 </html>
