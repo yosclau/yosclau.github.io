@@ -1,0 +1,8 @@
+/* Foto del gafete en alta calidad (9 nov 2026) */
+.hero .hero-collage .p-video.p-foto{background:#fff; padding:8px 8px 38px; box-shadow:0 1px 1px rgba(60,20,20,.08), 0 16px 30px -12px rgba(60,20,20,.35); width:52%; top:33%; right:1%; transform:rotate(4deg)}
+.hero .hero-collage .p-video.p-foto img{aspect-ratio:534/641!important; width:100%; height:auto; object-fit:cover; filter:none; border-radius:1px}
+.hero .hero-collage .p-video.p-foto figcaption{position:absolute; left:6px; right:6px; bottom:8px; margin:0; padding:0; transform:none; font-size:19px; white-space:nowrap}
+@media (min-width:900px){
+  .hero .hero-collage .p-video.p-foto{width:290px; top:160px; right:5%; padding:10px 10px 46px}
+  .hero .hero-collage .p-video.p-foto figcaption{font-size:24px; bottom:10px}
+}

@@ -1,0 +1,372 @@
+/* ===== Yosclau · PRUEBA v3 (sus elementos 3D) ===== */
+:root{--vino:#6B1E2C; --crema:#F4ECDF; --cielo3:#BCD8EA; --manteq3:#F1D98A; --rosa3:#EDB9C0}
+
+/* toldo superior: el de v2 (pastillas glossy vino/crema/cereza/rosa), regla en v2.css */
+.wordmark img{width:auto; height:30px}
+@media (min-width:900px){ .wordmark img{height:38px} }
+
+/* flotar + parallax (translate no choca con transform) */
+.float{animation:flota 7s ease-in-out infinite; translate:0 var(--py,0px); will-change:transform}
+.float.f2{animation-duration:8.5s; animation-delay:-2s}
+.float.f3{animation-duration:6s; animation-delay:-4s}
+@keyframes flota{0%,100%{transform:translateY(0) rotate(-1.5deg)} 50%{transform:translateY(-12px) rotate(1.5deg)}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative}
+.hero .logo-display{margin:6px 0 10px -1.5%; position:relative; z-index:3}
+.hero .logo-display img.wm3d{width:100%; max-width:none; height:auto}
+@media (min-width:900px){
+  .hero .logo-display img.wm3d{width:min(118%, 760px)}
+}
+.globo-hero{position:absolute; z-index:1; width:64px; right:5%; top:8px; pointer-events:none; filter:drop-shadow(0 14px 14px rgba(70,30,30,.14))}
+@media (min-width:900px){ .globo-hero{width:92px; left:55%; right:auto; top:-14px} }
+
+.arco{position:absolute; z-index:1; inset:0 9% 15% 7%; border-radius:999px 999px 22px 22px; overflow:hidden;
+  background-color:rgba(188,216,234,.78);
+  background-image:linear-gradient(155deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.12) 38%, rgba(255,255,255,0) 60%, rgba(120,170,205,.22) 100%),
+    radial-gradient(rgba(255,255,255,.9) 2px, transparent 2.6px), radial-gradient(rgba(255,255,255,.9) 2px, transparent 2.6px);
+  background-size:100% 100%, 26px 26px, 26px 26px; background-position:0 0, 0 0, 13px 13px;
+  -webkit-backdrop-filter:blur(8px) saturate(140%); backdrop-filter:blur(8px) saturate(140%);
+  border:1.5px solid rgba(255,255,255,.85);
+  box-shadow:inset 0 3px 0 rgba(255,255,255,.95), inset 0 0 0 7px rgba(255,255,255,.28), inset 0 -18px 30px rgba(70,120,160,.28), inset 14px 0 26px rgba(255,255,255,.35), 0 34px 50px -28px rgba(40,70,110,.55), 0 2px 0 rgba(107,30,44,.06)}
+.arco-brillo{position:absolute; top:6%; left:14%; width:16%; height:62%; border-radius:999px; background:linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,0)); filter:blur(2px); transform:rotate(8deg)}
+.carpa3d-float{position:relative}
+.carpa3d img.luna3d{position:absolute; z-index:2; width:17%; max-width:none; left:66%; top:-1%; transform:none; filter:drop-shadow(0 12px 14px rgba(120,90,20,.25)); animation:flota 8.5s ease-in-out infinite}
+.dest3d{position:absolute; z-index:5; width:15%; max-width:70px; left:2%; top:4%}
+.oro{position:absolute; z-index:5; color:#C9A24A; text-shadow:0 1px 0 rgba(255,255,255,.6); line-height:1; pointer-events:none}
+.oro.o1{font-size:22px; right:30%; top:6%}
+.oro.o2{font-size:14px; left:8%; top:40%}
+.oro.o3{font-size:18px; right:2%; bottom:6%}
+.hero-collage .p-main{z-index:3}
+.hero-collage .p-side{z-index:4}
+/* ---------- QUIÉN SOY ---------- */
+.about{display:block}
+.about-grid{display:grid; gap:38px; align-items:start; max-width:var(--maxw); margin:0 auto}
+@media (min-width:900px){ .about-grid{grid-template-columns:.9fr 1.25fr .5fr; gap:56px} }
+.portrait-slot{position:relative; background:#fff; padding:14px 14px 52px; transform:rotate(-3deg); overflow:visible; width:min(76vw,340px)}
+.portrait-slot .tape{display:none}
+.washi{position:absolute; z-index:4; top:-14px; right:18%; width:104px; height:28px; transform:rotate(8deg); opacity:.9;
+  background:repeating-linear-gradient(90deg, rgba(237,185,192,.95) 0 9px, rgba(251,247,240,.85) 9px 18px); box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.acc-corazon{position:absolute; z-index:5; width:64px; right:-24px; top:16%; transform:rotate(10deg); filter:drop-shadow(0 8px 10px rgba(107,30,44,.25))}
+.acc-sello{position:absolute; z-index:5; width:76px; left:-26px; bottom:-14px; transform:rotate(-10deg); filter:drop-shadow(0 6px 8px rgba(63,15,25,.25))}
+.acc-mono{position:absolute; z-index:5; width:96px; right:-20px; bottom:-26px; transform:rotate(8deg); filter:drop-shadow(0 8px 10px rgba(63,15,25,.2))}
+.about-h{font-size:clamp(36px,7vw,58px); line-height:1.02}
+.about-dest{display:inline-block; width:.62em; height:auto; vertical-align:top; margin-left:.08em}
+.pill-glass, .btn-colabora{display:inline-flex; align-items:center; gap:.5em; cursor:pointer; font:600 15px/1 var(--sans); color:var(--vino); padding:14px 22px; border-radius:999px;
+  background:linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.28)); border:1px solid rgba(255,255,255,.9);
+  -webkit-backdrop-filter:blur(14px) saturate(150%); backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), inset 0 -6px 14px rgba(188,216,234,.35), 0 14px 30px -14px rgba(63,15,25,.45)}
+.mas{margin-top:22px}
+.mas summary{list-style:none}
+.mas summary::-webkit-details-marker{display:none}
+.mas summary::after{content:"+"; font-size:18px; margin-left:4px}
+.mas[open] summary::after{content:"–"}
+.mas-body{padding-top:18px}
+.nota{justify-self:start; position:relative; background:#FBEFC4; padding:26px 22px 20px; transform:rotate(3deg); box-shadow:0 14px 24px -14px rgba(60,40,10,.4); max-width:200px}
+.nota p{margin:0; font-size:26px; line-height:1.15; color:var(--vino)}
+.nota-acc{position:absolute; width:56px; right:-20px; top:-24px}
+@media (min-width:900px){ .nota{margin-top:120px} }
+.linea-proceso{max-width:var(--maxw); margin:clamp(48px,7vw,80px) auto 0; text-align:center}
+.lp-title{font-size:12px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; color:var(--vino); margin:0 0 18px}
+.lp{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:6px; position:relative}
+.lp::before{content:""; position:absolute; left:12%; right:12%; top:34px; height:1px; background:rgba(107,30,44,.28)}
+.lp li{position:relative; display:flex; flex-direction:column; align-items:center; gap:8px}
+.lp img{width:68px; height:68px; object-fit:contain; position:relative; filter:drop-shadow(0 8px 8px rgba(63,15,25,.18))}
+.lp b{display:block; font-family:var(--serif); font-weight:500; font-size:15px; color:var(--vino); line-height:1.15}
+.lp b span{display:block; font-family:var(--sans); font-size:10px; letter-spacing:.18em; color:var(--cherry); margin-bottom:2px}
+.lp small{display:block; font-size:11.5px; line-height:1.3; color:var(--muted); margin-top:3px}
+@media (min-width:900px){ .lp img{width:96px; height:96px} .lp::before{top:48px} .lp b{font-size:20px} .lp small{font-size:13.5px} }
+
+/* ---------- SERVICIOS: toldo azul y mantequilla ---------- */
+.services{padding-top:calc(clamp(58px,8vw,92px) + 36px)}
+.vidrio-band{height:clamp(58px,8vw,92px); background:url("media/v3/toldo-cielo3d.webp") 0 0 / auto 100% repeat-x; -webkit-mask-image:none; mask-image:none; filter:drop-shadow(0 8px 10px rgba(40,70,110,.18))}
+.srv, .rv{background:rgba(255,255,255,.22); -webkit-backdrop-filter:blur(14px) saturate(160%); backdrop-filter:blur(14px) saturate(160%);
+  border:1px solid rgba(255,255,255,.55); border-radius:22px; box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 10px 32px rgba(31,50,90,.14)}
+
+/* ---------- DOS FORMAS: vidrio ---------- */
+.formas{background-color:var(--crema); background-image:radial-gradient(420px 300px at 12% 30%, rgba(237,185,192,.75), transparent 70%), radial-gradient(460px 320px at 88% 70%, rgba(188,216,234,.85), transparent 70%)}
+.offer{-webkit-backdrop-filter:blur(16px) saturate(150%); backdrop-filter:blur(16px) saturate(150%); border:1px solid rgba(255,255,255,.6); box-shadow:inset 0 1px 0 rgba(255,255,255,.5), 0 14px 36px rgba(63,15,25,.16)}
+.offer-crema{background:rgba(255,255,255,.34)}
+.offer-vino{background:rgba(107,30,44,.78); border-color:rgba(255,255,255,.28)}
+
+/* ---------- NORTE: globo ---------- */
+.statement{position:relative; overflow:hidden}
+.st-globo{position:absolute; width:66px; right:5%; top:22px; pointer-events:none; filter:drop-shadow(0 12px 12px rgba(70,30,30,.14))}
+@media (min-width:900px){ .st-globo{width:110px; right:8%; top:48px} }
+
+/* ---------- PROYECTOS: estampa ---------- */
+.work .section-head{position:relative}
+.acc-y{position:absolute; width:74px; right:0; top:-22px; transform:rotate(9deg); filter:drop-shadow(0 6px 8px rgba(63,15,25,.18))}
+@media (min-width:900px){ .acc-y{width:110px; right:4%} }
+
+/* ---------- PROCESO: números de gelatina ---------- */
+.sn3d img{height:58px; width:auto; filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
+.steps li{position:relative}
+
+/* ---------- RESEÑAS (espacio para reseñas reales) ---------- */
+.resenas{padding:clamp(64px,9vw,110px) var(--pad); background-color:#BBD4E7;
+  background-image:radial-gradient(rgba(255,255,255,.55) 2px, transparent 2.6px), radial-gradient(rgba(255,255,255,.55) 2px, transparent 2.6px);
+  background-size:30px 30px; background-position:0 0, 15px 15px}
+.rv-grid{list-style:none; margin:0 auto; padding:0; display:grid; gap:16px; max-width:var(--maxw)}
+@media (min-width:900px){ .rv-grid{grid-template-columns:repeat(3,1fr); gap:22px} }
+.rv{padding:28px 24px}
+.rv-q{font-family:var(--serif); font-style:italic; font-size:21px; color:var(--vino); margin:0 0 14px}
+.rv-n{margin:0; font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:#4B2A33}
+
+/* ---------- CARTA: botón de vidrio, video y sobre ---------- */
+.carta-stage{display:none}
+.v3js .carta-stage{display:flex; flex-direction:column; align-items:center; position:relative; margin:0 auto; padding:52px 18px 38px; max-width:520px; border-radius:999px 999px 28px 28px; overflow:hidden;
+  background-color:rgba(188,216,234,.9);
+  background-image:linear-gradient(155deg, rgba(255,255,255,.5), rgba(255,255,255,0) 50%, rgba(80,130,170,.2)), radial-gradient(rgba(255,255,255,.85) 2px, transparent 2.6px), radial-gradient(rgba(255,255,255,.85) 2px, transparent 2.6px);
+  background-size:100% 100%, 26px 26px, 26px 26px; background-position:0 0, 0 0, 13px 13px;
+  border:1.5px solid rgba(255,255,255,.8); box-shadow:inset 0 3px 0 rgba(255,255,255,.9), inset 0 -18px 30px rgba(70,120,160,.28), 0 34px 60px -30px rgba(0,0,0,.6)}
+.v3js .carta-wrap:not(.abierta) .carta, .v3js .carta-wrap:not(.abierta) .gracias{display:none}
+.v3js .carta-wrap.abierta .carta-stage{display:none}
+.sobre{position:relative; width:min(290px,80%); aspect-ratio:1.45; margin:46px auto 26px; perspective:900px}
+.sobre-back{position:absolute; inset:0; background:#EFE3CF; border-radius:6px; box-shadow:0 22px 34px -18px rgba(40,20,20,.55)}
+.sobre-papel{position:absolute; left:7%; right:7%; top:8%; height:84%; background:#FBF7F0; border-radius:3px; padding:16% 10% 0; transition:transform .9s cubic-bezier(.2,.7,.2,1) .55s; z-index:1}
+.sobre-papel span{display:block; height:3px; margin:0 0 10px; background:rgba(107,30,44,.18); border-radius:2px}
+.sobre-papel span:nth-child(2){width:80%} .sobre-papel span:nth-child(3){width:55%}
+.sobre-front{position:absolute; inset:0; z-index:2; border-radius:6px; background:linear-gradient(160deg,#F7EEDF,#EADBC3);
+  clip-path:polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%)}
+.sobre-flap{position:absolute; z-index:3; left:0; right:0; top:0; height:58%; background:linear-gradient(180deg,#F3E8D6,#E6D5BB); clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:50% 0; transition:transform .7s cubic-bezier(.5,0,.3,1), z-index 0s .35s; filter:drop-shadow(0 2px 2px rgba(0,0,0,.08))}
+.sobre-sello{position:absolute; z-index:4; width:24%; left:38%; top:38%; transition:opacity .3s ease}
+.carta-stage.abriendo .sobre-flap{transform:rotateX(180deg); z-index:0}
+.carta-stage.abriendo .sobre-sello{opacity:0}
+.carta-stage.abriendo .sobre-papel{transform:translateY(-62%)}
+.btn-colabora{font-size:17px; padding:16px 26px}
+.btn-colabora:hover{transform:translateY(-2px)}
+.btn-colabora:focus-visible, .pill-glass:focus-visible, .cm-skip:focus-visible{outline:3px solid var(--vino); outline-offset:3px}
+.colabora-nota{margin:12px 0 0; font-size:22px; color:var(--vino)}
+.carta-wrap.abierta .carta, .carta-wrap.abierta .gracias:target{animation:carta-sube 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes carta-sube{from{opacity:0; transform:translateY(90px) scale(.92)} to{opacity:1; transform:none}}
+.carta-modal{position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:20px;
+  background:rgba(35,10,22,.82); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); animation:cm-in .35s ease both}
+.carta-modal[hidden]{display:none}
+.carta-modal.saliendo{animation:cm-out .45s ease both}
+@keyframes cm-in{from{opacity:0}} @keyframes cm-out{to{opacity:0}}
+.cm-box{position:relative; width:min(92vw,560px)}
+.cm-box video{width:100%; height:auto; aspect-ratio:1; border-radius:22px; background:#2a0d16; box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.cm-skip{position:absolute; right:12px; bottom:12px; font:600 14px/1 var(--sans); color:#fff; padding:11px 16px; border-radius:999px; cursor:pointer;
+  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.5); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px)}
+
+@media (prefers-reduced-motion:reduce){
+  .float{animation:none; translate:none}
+  .sobre-flap, .sobre-papel{transition:none}
+}
+
+/* móvil: nada se sale de 390 px */
+@media (max-width:899px){
+  .globo-hero{width:54px; right:3%; top:236px}
+  .hero, .about, .statement, .work, .formas, .resenas{overflow-x:clip}
+}
+
+/* ---------- MI NORTE: carpetas de vidrio 3D ---------- */
+.norte{gap:22px 14px; margin-bottom:52px}
+.norte li{--t:188,216,234; position:relative; min-width:132px; padding:22px 16px 16px; margin-top:12px; border-radius:6px 16px 16px 16px;
+  background:linear-gradient(160deg, rgba(255,255,255,.62), rgba(var(--t),.42) 55%, rgba(var(--t),.62));
+  -webkit-backdrop-filter:blur(12px) saturate(150%); backdrop-filter:blur(12px) saturate(150%);
+  border:1px solid rgba(255,255,255,.75);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), inset 0 -8px 16px rgba(var(--t),.35), 0 16px 26px -16px rgba(63,15,25,.4);
+  animation:carpeta 6s ease-in-out infinite; transition:transform .35s ease}
+.norte li::before{content:""; position:absolute; left:-1px; top:-13px; width:54%; height:14px; border-radius:8px 12px 0 0;
+  background:linear-gradient(180deg, rgba(255,255,255,.7), rgba(var(--t),.55)); border:1px solid rgba(255,255,255,.75); border-bottom:0}
+.norte li:nth-child(1){--t:237,185,192; animation-delay:0s}
+.norte li:nth-child(2){--t:188,216,234; animation-delay:-1.2s}
+.norte li:nth-child(3){--t:241,217,138; animation-delay:-2.4s}
+.norte li:nth-child(4){--t:170,190,150; animation-delay:-3.6s}
+.norte li:nth-child(5){--t:200,120,135; animation-delay:-4.8s}
+@keyframes carpeta{0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}}
+@media (hover:hover){ .norte li:hover{transform:translateY(-8px) rotate(-1deg); animation-play-state:paused} }
+
+/* ---------- etiquetas: pastillas de vidrio con toda la paleta ---------- */
+.chips{gap:10px}
+.chips li{--c:188,216,234; background:linear-gradient(180deg, rgba(255,255,255,.55), rgba(var(--c),.55)); color:var(--burg-deep);
+  border:1px solid rgba(255,255,255,.8); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 8px 16px -10px rgba(63,15,25,.35); animation:pastilla 5s ease-in-out infinite}
+.chips li:nth-child(7n+1){--c:107,30,44; color:#fff; background:linear-gradient(180deg, rgba(160,70,85,.75), rgba(107,30,44,.85))}
+.chips li:nth-child(7n+2){--c:179,38,58; color:#fff; background:linear-gradient(180deg, rgba(220,90,105,.7), rgba(179,38,58,.82))}
+.chips li:nth-child(7n+3){--c:237,185,192}
+.chips li:nth-child(7n+4){--c:188,216,234}
+.chips li:nth-child(7n+5){--c:241,217,138}
+.chips li:nth-child(7n+6){--c:150,175,130}
+.chips li:nth-child(7n+7){--c:244,236,223}
+.chips li:nth-child(2n){animation-delay:-1.3s} .chips li:nth-child(3n){animation-delay:-2.6s} .chips li:nth-child(5n){animation-delay:-3.9s}
+@keyframes pastilla{0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){ .norte li, .chips li{animation:none} }
+
+/* ---------- antes / después ---------- */
+.rediseno{display:grid; gap:22px}
+@media (min-width:900px){ .rediseno{grid-template-columns:.8fr 1.4fr; align-items:center} }
+.ba{position:relative; overflow:hidden; border-radius:18px; aspect-ratio:900/563; box-shadow:0 24px 50px -26px rgba(63,15,25,.55); touch-action:pan-y; background:#eee}
+.ba img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.ba-despues{clip-path:inset(0 0 0 var(--x))}
+.ba-tag{position:absolute; bottom:12px; z-index:2; font:700 11px/1 var(--sans); letter-spacing:.16em; text-transform:uppercase; padding:8px 12px; border-radius:999px; color:var(--vino);
+  background:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.85); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px)}
+.ba-t1{left:12px} .ba-t2{right:12px}
+.ba-handle{position:absolute; z-index:3; top:0; bottom:0; left:var(--x); width:2px; margin-left:-1px; background:rgba(255,255,255,.9); pointer-events:none}
+.ba-handle span{position:absolute; top:50%; left:50%; width:46px; height:46px; margin:-23px 0 0 -23px; border-radius:50%; display:grid; place-items:center; font:700 15px/1 var(--sans); color:var(--vino);
+  background:linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.35)); border:1px solid rgba(255,255,255,.95); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+  box-shadow:inset 0 1px 0 #fff, 0 10px 20px -8px rgba(63,15,25,.5)}
+.ba-range{position:absolute; inset:0; z-index:4; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; -webkit-appearance:none; appearance:none; touch-action:pan-y}
+.ba-range:focus-visible + .x, .ba:focus-within .ba-handle span{outline:3px solid var(--vino); outline-offset:2px}
+.ba-range::-webkit-slider-thumb{-webkit-appearance:none; width:56px; height:400px; background:transparent; cursor:ew-resize}
+.ba-range::-moz-range-thumb{width:56px; height:400px; border:0; background:transparent}
+
+/* ---------- CONTACTO: la carpa solita, al centro ---------- */
+.lab-escena{position:relative; width:min(78%,420px); aspect-ratio:1/1; margin:clamp(30px,5vw,46px) auto 0; border-radius:30px; overflow:hidden;
+  background:radial-gradient(120% 90% at 50% 30%, #F8DCE0 0%, #EDB9C0 72%, #E6A9B2 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 26px 50px -24px rgba(0,0,0,.55)}
+.lab-escena::after{content:""; position:absolute; left:22%; right:22%; bottom:7%; height:7%; border-radius:50%; background:radial-gradient(closest-side, rgba(107,30,44,.32), rgba(107,30,44,0)); z-index:1}
+.lab-carpa{position:absolute; z-index:2; width:60%; height:auto; left:20%; bottom:9%; filter:drop-shadow(0 10px 12px rgba(107,30,44,.22))}
+.lab-luna{position:absolute; z-index:3; width:17%; left:9%; top:9%; filter:drop-shadow(0 8px 10px rgba(150,110,30,.22))}
+.lab-globo{position:absolute; z-index:3; width:16%; right:9%; top:6%; filter:drop-shadow(0 10px 10px rgba(107,30,44,.18))}
+@media (min-width:900px){ .lab-escena{width:380px} }
+
+/* ---------- CONSTANTES: recuadros de vidrio con pestaña (como Mi Norte) ---------- */
+.mirada{background-color:var(--crema); background-image:radial-gradient(380px 300px at 10% 22%, rgba(188,216,234,.75), transparent 70%), radial-gradient(420px 320px at 92% 48%, rgba(241,217,138,.6), transparent 70%), radial-gradient(380px 300px at 18% 86%, rgba(170,190,150,.5), transparent 70%)}
+.constants{grid-template-columns:repeat(2,1fr); gap:26px 12px; margin-top:8px}
+@media (min-width:1000px){ .constants{grid-template-columns:repeat(3,1fr); gap:34px 20px} }
+.constants li{--t:188,216,234; --d:#4f88b5; position:relative; padding:46px 13px 15px; margin-top:12px; border-top:0; border-radius:6px 16px 16px 16px;
+  background:linear-gradient(160deg, rgba(255,255,255,.66), rgba(var(--t),.40) 55%, rgba(var(--t),.62));
+  -webkit-backdrop-filter:blur(12px) saturate(150%); backdrop-filter:blur(12px) saturate(150%);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), inset 0 -8px 16px rgba(var(--t),.35), 0 16px 26px -16px rgba(63,15,25,.38);
+  animation:carpeta 6s ease-in-out infinite; transition:transform .35s ease}
+.constants li::before{content:""; position:absolute; left:-1px; top:-13px; width:52%; height:14px; border-radius:8px 12px 0 0;
+  background:linear-gradient(180deg, rgba(255,255,255,.75), rgba(var(--t),.6)); border:1px solid rgba(255,255,255,.8); border-bottom:0}
+.constants .n{left:13px; top:12px; width:28px; height:28px; font-size:15px; color:#fff;
+  background:radial-gradient(circle at 34% 28%, rgba(255,255,255,.75) 0 14%, rgba(255,255,255,0) 42%), var(--d);
+  box-shadow:inset 0 -3px 5px rgba(0,0,0,.18), 0 5px 9px -3px var(--d)}
+.constants h3{font-size:19px; margin:0 0 5px}
+.constants p{font-size:14px; line-height:1.4; color:#4a3a3a}
+@media (min-width:640px){ .constants li{padding:50px 20px 20px} .constants .n{left:18px; top:14px; width:32px; height:32px} .constants h3{font-size:23px} .constants p{font-size:15.5px} }
+.constants li:nth-child(1){--t:188,216,234; --d:#4f88b5; animation-delay:0s}
+.constants li:nth-child(2){--t:241,217,138; --d:#c8952f; animation-delay:-1s}
+.constants li:nth-child(3){--t:170,190,150; --d:#6a8a57; animation-delay:-2s}
+.constants li:nth-child(4){--t:237,185,192; --d:#c45a72; animation-delay:-3s}
+.constants li:nth-child(5){--t:188,216,234; --d:#4f88b5; animation-delay:-4s}
+.constants li:nth-child(6){--t:241,217,138; --d:#c8952f; animation-delay:-5s}
+@media (hover:hover){ .constants li:hover{transform:translateY(-8px) rotate(-1deg); animation-play-state:paused} }
+@media (prefers-reduced-motion:reduce){ .constants li{animation:none} }
+
+/* ---------- REDES: iconos de app en vidrio 3D ---------- */
+.apps{list-style:none; padding:0; margin:26px auto 0; display:flex; flex-wrap:wrap; justify-content:center; gap:16px 10px; max-width:560px}
+.app{display:flex; flex-direction:column; align-items:center; gap:8px; width:58px; text-decoration:none; color:var(--burgundy); font-weight:700; font-size:12.5px}
+.app-ico{--g:rgba(0,0,0,.25); position:relative; display:grid; place-items:center; width:56px; height:56px; border-radius:16px; overflow:hidden;
+  box-shadow:inset 0 2px 1px rgba(255,255,255,.55), inset 0 -7px 12px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.28), 0 12px 20px -8px var(--g), 0 3px 6px rgba(0,0,0,.12);
+  transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.app-ico::before{content:""; position:absolute; left:6%; right:6%; top:3%; height:46%; border-radius:14px 14px 50% 50% / 14px 14px 22px 22px; background:linear-gradient(180deg, rgba(255,255,255,.62), rgba(255,255,255,.08)); pointer-events:none; z-index:2}
+.app-ico::after{content:""; position:absolute; inset:0; border-radius:inherit; background:radial-gradient(120% 70% at 50% 120%, rgba(255,255,255,.28), transparent 60%); pointer-events:none; z-index:2}
+.app-ico svg{position:relative; z-index:1; width:56%; height:56%; filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
+.app-ig{--g:rgba(214,41,118,.55); background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 6%, #fd5949 42%, #d6249f 62%, #285AEB 92%)}
+.app-tt{--g:rgba(0,0,0,.5); background:linear-gradient(160deg, #2b2b2b, #050505)}
+.app-yt{--g:rgba(255,0,51,.5); background:linear-gradient(160deg, #ff4d5e, #e00021)}
+.app-yt svg{width:64%; height:64%}
+.app-li{--g:rgba(10,102,194,.5); background:linear-gradient(160deg, #2f8ae0, #0a66c2)}
+.app-fb{--g:rgba(24,119,242,.5); background:linear-gradient(160deg, #4b9bff, #1877f2)}
+.app:hover .app-ico, .app:focus-visible .app-ico{transform:translateY(-5px) scale(1.06)}
+.app-lbl{line-height:1.1}
+@media (min-width:900px){ .apps{gap:22px 26px} .app{width:76px; font-size:14px} .app-ico{width:76px; height:76px; border-radius:21px} }
+
+
+/* ---------- CONTACTO v3d: su carpa en video sobre el vino, tocar -> carta -> formulario rosa ---------- */
+.carpa-escena{position:relative; width:min(94%,460px); aspect-ratio:1/1; margin:clamp(26px,5vw,44px) auto 0}
+.carpa-btn{display:block; width:100%; height:100%; padding:0; margin:0; border:0; background:transparent; cursor:pointer; border-radius:50%; -webkit-tap-highlight-color:transparent}
+.carpa-btn:focus-visible{outline:2px dashed rgba(237,185,192,.7); outline-offset:-10%}
+.carpa-btn video{display:block; width:100%; height:100%; object-fit:cover; background:transparent;
+  -webkit-mask-image:radial-gradient(closest-side, #000 58%, rgba(0,0,0,.6) 78%, transparent 100%);
+  mask-image:radial-gradient(closest-side, #000 58%, rgba(0,0,0,.6) 78%, transparent 100%)}
+.carpa-escena .lab-luna{position:absolute; z-index:3; width:16%; left:4%; top:6%; pointer-events:none; filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
+.carpa-escena .lab-globo{position:absolute; z-index:3; width:14%; right:5%; top:3%; pointer-events:none; filter:drop-shadow(0 10px 14px rgba(0,0,0,.35))}
+.carpa-hint{display:none}
+.v3js .carpa-hint{display:block; position:absolute; z-index:4; left:0; right:0; bottom:2%; margin:0; text-align:center; font-size:26px; color:#EDB9C0; pointer-events:none; animation:hint-late 2.4s ease-in-out infinite; transition:opacity .4s}
+.carpa-escena.jugando .carpa-hint, .carpa-escena.abierta .carpa-hint{opacity:0; animation:none}
+@keyframes hint-late{0%,100%{transform:translateY(0); opacity:.85} 50%{transform:translateY(-5px); opacity:1}}
+/* formulario: recuadro rosa limpio sobre el vino */
+.carta{background:#EDB9C0; background-image:none; border-radius:26px; box-shadow:0 26px 50px -28px rgba(0,0,0,.6); color:var(--vino)}
+.carta::before, .carta::after{display:none}
+.carta-para span{color:rgba(107,30,44,.7)}
+.v3js .carta-wrap{margin-top:clamp(18px,4vw,30px)}
+@media (prefers-reduced-motion: reduce){ .v3js .carpa-hint{animation:none} }
+.carta{transform:none}
+.carpa-btn video{transform:translateX(-0.8%)}
+.carta{scroll-margin-top:84px}
+
+/* ---------- LETRA v3e (Claudia eligio 6 y 9): Gloock titulos, Yeseva One subtitulos, Great Vibes acentos, Work Sans texto ---------- */
+html{font-synthesis:none}
+h1,h2,.h2,.display,.hub-title{font-family:var(--display); font-weight:400; letter-spacing:-.005em}
+.h2 em, h1 em, h2 em{font-family:var(--script); font-style:normal; font-weight:400; font-size:1.3em; line-height:.7; letter-spacing:0}
+h3,.h3,h4{font-family:var(--serif); font-weight:400; letter-spacing:0}
+.h3 em, h3 em{font-style:normal; color:var(--cherry)}
+.kicker,.eyebrow{font-family:var(--sans); font-weight:600; letter-spacing:.28em; font-size:12px}
+.script{font-family:var(--script); font-style:normal; font-weight:400; letter-spacing:0; font-size:1.18em}
+.carta-saludo{font-family:var(--script); font-style:normal; font-weight:400; font-size:clamp(46px,10vw,64px); line-height:1}
+.positioning{font-family:var(--serif); font-weight:400}
+.btn,.btn-carta,.pill,.pill-glass,.btn-colabora{font-family:var(--sans)}
+/* nombre plano en Gloock, cereza, con destellos */
+.hero .logo-text{font-family:var(--display); font-weight:400; color:var(--cherry); font-size:min(16.6vw, 132px); line-height:.95; letter-spacing:.01em; white-space:nowrap; margin:6px 0 12px -.04em}
+.logo-text .spk{display:inline-block; font-size:.26em; vertical-align:.95em; margin:0 .14em 0 0; color:var(--cherry)}
+.logo-text .spk2{vertical-align:.1em; margin:0 0 0 .1em}
+.wm-t{font-family:var(--display); color:var(--cherry); font-size:26px; letter-spacing:.02em; line-height:1}
+@media (min-width:900px){ .wm-t{font-size:32px} }
+@media (max-width:420px){ .wm-t{display:none} }
+
+/* ---------- MARCAS v3e: su Y, su sello y su toldo ---------- */
+.wordmark{display:inline-flex; align-items:center; gap:8px}
+.wordmark img.wm-y{height:34px; width:auto}
+@media (min-width:900px){ .wordmark img.wm-y{height:44px} }
+.toldo{background-image:url("media/v3e/toldo-ella.webp"); filter:drop-shadow(0 6px 6px rgba(150,110,40,.22))}
+.carta .sello{width:78px; height:auto; padding:0; background:none; box-shadow:none; border:0; transform:rotate(5deg); filter:drop-shadow(0 6px 8px rgba(107,30,44,.22))}
+.carta .sello::before,.carta .sello::after{display:none}
+.carta .sello img{width:100%; height:auto; padding:0; background:none; border:0; object-fit:contain}
+@media (min-width:640px){ .carta .sello{width:96px; height:auto} }
+.gracias-sello{height:auto}
+@media (max-width:899px){ .wordmark{gap:5px} .wordmark img{height:22px} .wordmark img.wm-y{height:28px} }
+@media (max-width:899px){ .hero .tagline{font-size:clamp(26px,7.6vw,32px)} }
+@media (max-width:420px){ .wordmark img.wm-y{height:34px} }
+.hero .tagline{line-height:1.15}
+@media (min-width:900px){ .hero .tagline{font-size:clamp(32px,3vw,42px)} }
+
+/* ---------- v3f: su logo real, su firma, toldos alternados, botones de vidrio ---------- */
+/* toldo superior: borde de pastillas glossy (cereza, rosa, vino, crema), como su referencia; el dorado de ella baja a Servicios */
+.toldo{height:40px; margin-bottom:-10px; background:url("media/v3f/toldo-borde.svg") repeat-x 0 0 / auto 100%; filter:drop-shadow(0 4px 5px rgba(179,38,58,.28))}
+@media (min-width:900px){ .toldo{height:52px; margin-bottom:-14px} }
+.vidrio-band{background:url("media/v3e/toldo-ella.webp") 0 0 / auto 100% repeat-x; filter:drop-shadow(0 6px 6px rgba(150,110,40,.22))}
+
+/* logo: su imagen, no texto */
+.hero .logo-img{margin:8px 0 14px; line-height:0; font-size:0}
+.hero .logo-img img{display:block; width:min(100%, 560px); height:auto}
+@media (min-width:900px){ .hero .logo-img img{width:min(100%, 600px)} }
+.wordmark img.wm-logo{height:24px; width:auto; display:block}
+@media (min-width:900px){ .wordmark img.wm-logo{height:30px} }
+@media (max-width:420px){ .wordmark img.wm-logo{display:none} }
+
+/* firma: chiquita, como despedida a mano */
+.firma{display:block; height:auto; pointer-events:none}
+.firma-about{width:150px; margin:22px 0 0 auto; transform:rotate(-4deg)}
+@media (min-width:900px){ .firma-about{width:170px} }
+.carta-posdata{display:flex; align-items:center; justify-content:flex-end; gap:10px; margin-top:22px}
+.carta-posdata span{font-family:var(--serif); font-style:italic; font-size:16px; color:var(--vino); opacity:.8}
+.firma-carta{width:128px; transform:rotate(-4deg)}
+.firma-gracias{width:132px; margin:-4px auto 16px; transform:rotate(-4deg)}
+
+/* tarjeta del formulario: beige suave en lugar de rosa */
+.carta{background:#F4ECDF; background-image:linear-gradient(180deg,#F7F0E5 0%,#EFE3D3 100%)}
+
+/* botones: vidrio con color */
+.btn,.btn-carta,.btn-colabora{position:relative; isolation:isolate; overflow:hidden; -webkit-backdrop-filter:blur(12px) saturate(1.4); backdrop-filter:blur(12px) saturate(1.4); border:1px solid rgba(255,255,255,.6); transition:transform .2s, background .2s, box-shadow .2s}
+.btn::before,.btn-carta::before,.btn-colabora::before{content:""; position:absolute; z-index:-1; left:8%; right:8%; top:2px; height:48%; border-radius:999px 999px 60% 60% / 999px 999px 100% 100%; background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0)); pointer-events:none}
+.btn-solid,.btn-carta{background:rgba(179,38,58,.78); color:#fff; box-shadow:0 10px 24px -10px rgba(179,38,58,.7), inset 0 -2px 6px rgba(107,30,44,.35); text-shadow:0 1px 1px rgba(107,30,44,.35)}
+.btn-solid:hover,.btn-carta:hover{background:rgba(160,30,50,.86); transform:translateY(-2px)}
+.btn-line,.hero .btn-line{background:rgba(188,216,234,.55); color:var(--vino); border-color:rgba(255,255,255,.75); box-shadow:0 10px 24px -12px rgba(80,120,160,.6), inset 0 -2px 6px rgba(80,120,160,.18)}
+.btn-line:hover,.hero .btn-line:hover{background:rgba(188,216,234,.75)}
+.btn-cream{background:rgba(237,185,192,.6); color:var(--vino); box-shadow:0 10px 24px -12px rgba(200,110,125,.7), inset 0 -2px 6px rgba(179,38,58,.15)}
+.btn-cream:hover{background:rgba(237,185,192,.8)}
+.contact .btn-cream{background:rgba(237,185,192,.82)}
+.btn-ghost,.contact .btn-ghost{background:rgba(188,216,234,.2); color:#fff; border:1px solid rgba(255,255,255,.5); box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
+.btn-ghost::before,.contact .btn-ghost::before{background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0))}
+.btn-ghost:hover,.contact .btn-ghost:hover{background:rgba(188,216,234,.32)}
+.btn-colabora{background:rgba(237,185,192,.6); color:var(--vino)}
+.btn:focus-visible,.btn-carta:focus-visible{outline:3px solid var(--vino); outline-offset:3px}
