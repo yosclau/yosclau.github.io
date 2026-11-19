@@ -1,9 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/portafolio",
-      "destination": "/portafolio.html"
+      "src": "^/portafolio/?$",
+      "dest": "/portafolio.html"
+    },
+    {
+      "handle": "filesystem"
     }
   ]
 }
