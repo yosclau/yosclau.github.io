@@ -18,3 +18,6 @@ body{background:#fff}
 .ph-strip .ph-k{display:inline-block; background:#fff; color:var(--burgundy); font-weight:700; font-size:11px; letter-spacing:.1em; text-transform:uppercase; border-radius:999px; padding:3px 10px; margin-right:6px; vertical-align:1px}
 .ph-strip a{display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; background:#fff; color:var(--burgundy); font-weight:700; font-size:15px; text-decoration:none; white-space:nowrap}
 .ph-strip a:hover{background:var(--rosa)}
+
+/* 9 nov 2026: segundo boton en la franja (Mis carpetas) */
+.ph-strip-go{display:flex; flex-wrap:wrap; gap:8px}

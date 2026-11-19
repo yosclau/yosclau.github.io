@@ -2,7 +2,7 @@
 (function () {
 const $ = id => document.getElementById(id);
 if (!$('ys-wall')) return;
-const M = 'https://yosclau.github.io/m/', L = 'https://yosclau.github.io/v3/mundos/', LV = 'https://yosclau.github.io/v3/mundos/';
+const M = 'm/', L = 'medios/mundos/', LV = 'medios/mundos/';
 const LOCAL = new Set(['logo-animado', 'sello-animado', 'iconos-flotantes', 'ic-luna', 'ic-carpa', 'ic-sello-rojo', 'ic-globo', 'ic-conejita', 'ic-timbre']);
 const base = f => (LOCAL.has(f) ? L : M) + f;
 const img = f => base(f) + '.webp';
@@ -142,7 +142,7 @@ const stylesEl = $('ys-styles'), resEl = $('ys-result'), typed = $('ys-typed');
 let sIdx = 0, typer = null;
 STY.forEach(([n], k) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'ys-chip'; b.textContent = n; b.setAttribute('aria-pressed', k === 0); b.onclick = () => pick(k); stylesEl.appendChild(b) });
 function setImg(src, instant) {
-  const old = resEl.querySelector('img:not(.out)'); const im = new Image(); im.src = src; im.alt = ''; im.className = instant ? '' : 'out';
+  const old = resEl.querySelector('img:not(.out)'); const im = new Image(); im.src = src; im.alt = 'La misma idea mostrada en otro estilo visual'; im.className = instant ? '' : 'out';
   resEl.insertBefore(im, resEl.querySelector('.ys-shimmer'));
   if (!instant) requestAnimationFrame(() => requestAnimationFrame(() => im.classList.remove('out')));
   if (old) { old.classList.add('out'); setTimeout(() => old.remove(), 700) }

@@ -1,0 +1,83 @@
+/* ===== Yosclau · PRUEBA de rediseño (toldo + azul cielo) ===== */
+:root{
+  --crema:#F4ECDF; --vino:#6B1E2C; --cereza:#B3263A; --rosa:#EDB9C0;
+  --azul:#CFE1F0; --azul-2:#E6F0F8; --azul-ink:#7FA6C6; --manteq:#F4D88E; --sage:#8DA88E;
+  --cielo:#CFE1F0; --cielo-soft:#E6F0F8; --butter:#F4D88E; --verde:#8DA88E;
+}
+
+/* --- toldo de carpa (marco superior) --- */
+.toldo{position:relative; z-index:60; height:35px; margin-bottom:-14px; background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22104%22%20height%3D%2235%22%20viewBox%3D%220%200%20104%2035%22%3E%3Cpath%20d%3D%22M0%200H26V20A13%2013%200%200%201%200%2020Z%22%20fill%3D%22%236B1E2C%22/%3E%3Cpath%20d%3D%22M26%2020A13%2013%200%200%201%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%236B1E2C%22%20stroke-width%3D%221.4%22/%3E%3Cpath%20d%3D%22M26%200H52V20A13%2013%200%200%201%2026%2020Z%22%20fill%3D%22%23FBF7F0%22/%3E%3Cpath%20d%3D%22M52%2020A13%2013%200%200%201%2026%2020%22%20fill%3D%22none%22%20stroke%3D%22%236B1E2C%22%20stroke-width%3D%221.4%22/%3E%3Cpath%20d%3D%22M52%200H78V20A13%2013%200%200%201%2052%2020Z%22%20fill%3D%22%23B3263A%22/%3E%3Cpath%20d%3D%22M78%2020A13%2013%200%200%201%2052%2020%22%20fill%3D%22none%22%20stroke%3D%22%236B1E2C%22%20stroke-width%3D%221.4%22/%3E%3Cpath%20d%3D%22M78%200H104V20A13%2013%200%200%201%2078%2020Z%22%20fill%3D%22%23EDB9C0%22/%3E%3Cpath%20d%3D%22M104%2020A13%2013%200%200%201%2078%2020%22%20fill%3D%22none%22%20stroke%3D%22%236B1E2C%22%20stroke-width%3D%221.4%22/%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22104%22%20height%3D%225%22%20fill%3D%22%236B1E2C%22/%3E%3C/svg%3E") repeat-x 0 0 / 104px 35px; pointer-events:none; filter:drop-shadow(0 3px 3px rgba(63,15,25,.16))}
+@media (min-width:900px){ .toldo{height:46px; margin-bottom:-19px; background-size:137px 46px} }
+.topbar{padding-top:22px}
+@media (min-width:900px){ .topbar{padding-top:26px} }
+/* when the bar sticks, the toldo has scrolled away: keep it compact */
+.topbar{transition:padding .2s}
+
+/* --- menos ruido: elementos ilustrados se quedan para Instagram --- */
+.brand-accent, .spark, .moon, .tile-moon{display:none!important}
+.eyebrow::before{content:''!important; display:inline-block; width:18px; height:2px; background:var(--cereza); vertical-align:middle; margin-right:.7em; transform:translateY(-2px)}
+.night .eyebrow::before{background:var(--manteq)}
+.marquee-track{align-items:center}
+.marquee-track i{font-size:0; line-height:0; display:inline-flex}
+.marquee-track i::before{content:''; display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--azul); vertical-align:middle}
+
+/* --- destellos SVG (solo 2) --- */
+.dest{position:absolute; display:block; width:22px; height:22px; pointer-events:none; z-index:5}
+.dest svg{width:100%; height:100%; display:block}
+.dest.d1{top:20%; right:30%; width:16px; height:16px; fill:#FBF7F0}
+.dest.d2{top:-6px; right:4px; width:26px; height:26px; fill:var(--cereza)}
+@media (min-width:900px){ .dest.d2{right:12%; top:6px; width:30px; height:30px} }
+
+/* --- hero: ventana azul con luna (en lugar del papel roto) --- */
+.hero-collage .torn-blue{display:none}
+.ventana{position:absolute; inset:2% 4% 12% 10%; border-radius:999px 999px 16px 16px; background-color:var(--azul);
+  background-image:radial-gradient(rgba(255,255,255,.75) 1.6px, transparent 2px), radial-gradient(rgba(255,255,255,.75) 1.6px, transparent 2px);
+  background-size:22px 22px; background-position:0 0, 11px 11px;
+  border:1.5px solid rgba(107,30,44,.35); box-shadow:inset 0 0 0 7px #FBF7F0, inset 0 0 0 8.5px rgba(107,30,44,.25); overflow:hidden}
+.ventana .luna{position:absolute; top:7%; right:13%; width:40px; height:40px; transform:rotate(-18deg); fill:var(--manteq); filter:drop-shadow(0 2px 0 rgba(107,30,44,.18))}
+@media (min-width:900px){ .ventana .luna{width:50px; height:50px; top:9%; right:12%} }
+.swatches li:nth-child(1){--c:#6B1E2C!important; background:#6B1E2C}
+.swatches li:nth-child(2){background:#CFE1F0}
+.swatches li:nth-child(3){background:#B3263A}
+.swatches li:nth-child(4){background:#EDB9C0}
+.swatches li:nth-child(5){background:#8DA88E}
+.swatches li:nth-child(6){background:#F4D88E}
+.btn-line:hover,.btn-cream:hover{background:var(--azul)}
+
+/* --- quién soy: foto en marco de estampilla --- */
+.about .portrait-slot{background:transparent; box-shadow:none; padding:0 0 46px; filter:drop-shadow(0 12px 18px rgba(60,20,20,.22))}
+.about .portrait-slot .tape{display:none}
+.about .portrait-slot > img:not(.brand-accent){padding:10px; background:#FBF7F0;
+  -webkit-mask:linear-gradient(#000 0 0) content-box, radial-gradient(circle, transparent 5px, #000 5.5px) -8px -8px / 16px 16px round;
+          mask:linear-gradient(#000 0 0) content-box, radial-gradient(circle, transparent 5px, #000 5.5px) -8px -8px / 16px 16px round}
+.about .portrait-slot figcaption{bottom:6px}
+.about .portrait-slot::after{content:'YOSCLAU · CHICAGO'; position:absolute; top:22px; right:-8px; transform:rotate(12deg); font:700 10px/1 var(--sans); letter-spacing:.18em; color:var(--vino); border:1.5px solid var(--vino); border-radius:999px; padding:9px 12px; background:rgba(251,247,240,.82); opacity:.85}
+.chips li, .chips li:nth-child(3n), .chips li:nth-child(4n){background:var(--azul-2); color:var(--vino); border:1px solid #B9D2E6}
+.chips li:nth-child(5n){background:#FBF2D6; border-color:#EBD48F}
+.robinsons .script{color:#5F7D61}
+
+/* --- servicios: puntitos azul cielo + bordes festoneados --- */
+.services{position:relative; background-color:var(--azul);
+  background-image:radial-gradient(rgba(255,255,255,.7) 2px, transparent 2.5px), radial-gradient(rgba(255,255,255,.7) 2px, transparent 2.5px);
+  background-size:28px 28px; background-position:0 0, 14px 14px;
+  padding-top:clamp(84px,10vw,140px); padding-bottom:clamp(84px,10vw,140px)}
+.services::before, .services::after{content:''; position:absolute; left:0; right:0; height:14px; pointer-events:none}
+.services::before{top:0; background:radial-gradient(circle at 50% 0, var(--crema) 13px, transparent 13.6px) 0 0 / 28px 14px repeat-x}
+.services::after{bottom:0; background:radial-gradient(circle at 50% 100%, var(--crema) 13px, transparent 13.6px) 0 0 / 28px 14px repeat-x}
+.services .section-head .eyebrow, .services .h2{color:var(--vino)}
+.srv{background:#FBF7F0; border:1px solid rgba(107,30,44,.14); box-shadow:0 18px 30px -24px rgba(40,60,90,.55)}
+.srv-tags li{background:var(--azul-2); border-color:#B9D2E6; color:var(--vino)}
+@media (min-width:640px){ .srv-num{background:var(--vino); color:var(--manteq)} }
+.capab{color:var(--vino)}
+
+/* --- divisor festoneado antes de contacto --- */
+.contact{padding-top:calc(clamp(72px,10vw,130px) + 14px)}
+.contact::before{content:''; position:absolute; top:0; left:0; right:0; height:14px; z-index:2; background:radial-gradient(circle at 50% 0, var(--crema) 13px, transparent 13.6px) 0 0 / 28px 14px repeat-x}
+
+/* --- portafolio: chips de filtro en azul --- */
+.chip-f[aria-pressed="true"]{background:var(--vino); color:#FBF7F0}
+.chip-f:not([aria-pressed="true"]):hover{background:var(--azul)}
+
+/* azul también arriba */
+.hero .btn-line{background:var(--azul-2)}
+.hero .btn-line:hover{background:var(--azul)}

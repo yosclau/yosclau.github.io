@@ -1,0 +1,20 @@
+/* blanco (9 nov 2026): fondo blanco limpio en lugar del beige; grises suaves para separar */
+:root{--paper:#ffffff; --paper2:#f6f6f7; --pearl:#ffffff; --crema:#ffffff; --ys-crema:#ffffff; --ys-card:#ffffff}
+body{background:#fff}
+.paper{background-color:#fff; background-image:none}
+.topbar{background:rgba(255,255,255,.92)}
+.work{background-color:#f6f6f7; background-image:none}
+.carta,.gracias{background:#fff; background-image:none; border:1px solid #e6e6e9}
+.formas,.mirada,.ys-mesa{background-color:#fff}
+.sobre-back{background:#f1f1f3}
+.sobre-papel,.about .portrait-slot > img:not(.brand-accent){background:#fff}
+.filters{background:rgba(255,255,255,.95)}
+.ph-card,.topbar .ph-door{background:rgba(255,255,255,.85)}
+/* franja: ¿Buscas IA? (puerta a The Pixela House) */
+.ph-strip{background:var(--burgundy); color:#fff; padding:14px var(--pad)}
+.ph-strip-in{max-width:var(--maxw); margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 18px}
+.ph-strip p{margin:0; font-size:15px; line-height:1.45; max-width:40rem}
+.ph-strip b{font-weight:700}
+.ph-strip .ph-k{display:inline-block; background:#fff; color:var(--burgundy); font-weight:700; font-size:11px; letter-spacing:.1em; text-transform:uppercase; border-radius:999px; padding:3px 10px; margin-right:6px; vertical-align:1px}
+.ph-strip a{display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; background:#fff; color:var(--burgundy); font-weight:700; font-size:15px; text-decoration:none; white-space:nowrap}
+.ph-strip a:hover{background:var(--rosa)}

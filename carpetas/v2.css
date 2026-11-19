@@ -1,0 +1,71 @@
+/* ===== Yosclau · PRUEBA v2 (3D + vidrio + movimiento) ===== */
+
+/* --- toldo 3D (imagen real) en lugar del toldo dibujado --- */
+.toldo{height:62px; margin-bottom:-20px; background:url("media/v3e/toldo-ella.webp") repeat-x 0 0 / auto 100%; filter:none}
+@media (min-width:900px){ .toldo{height:96px; margin-bottom:-30px; background-size:auto 100%} }
+.topbar{padding-top:24px}
+@media (min-width:900px){ .topbar{padding-top:34px} }
+
+/* --- hero editorial: carpa 3D flotando --- */
+.hero-collage .ventana, .hero-collage .torn-blue{display:none}
+.carpa3d{position:absolute; z-index:1; top:-2%; right:-10%; width:96%; pointer-events:none; perspective:900px}
+.carpa3d-float{animation:carpa-float 7s ease-in-out infinite; will-change:transform}
+.carpa3d img{display:block; width:100%; height:auto; transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(var(--tx,0px),var(--ty,0px),0); transition:transform .5s cubic-bezier(.2,.7,.2,1); filter:drop-shadow(0 26px 30px rgba(70,30,30,.16))}
+@keyframes carpa-float{0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)}}
+.hero-collage{min-height:600px}
+.p-main{width:min(46%,250px); left:0; top:44%; transform:rotate(-5deg); z-index:3}
+.p-side{width:min(42%,240px); right:2%; top:58%; transform:rotate(4deg); z-index:4}
+.note{bottom:-2%; right:3%}
+.swatches{bottom:-4%; left:auto; right:46%; z-index:5}
+@media (max-width:899px){
+  .hero-collage{min-height:640px; margin-top:-6px}
+  .carpa3d{top:-3%; right:-12%; width:104%}
+  .p-main{left:0; top:43%; width:48%}
+  .p-side{right:0; top:56%; width:44%}
+  .swatches{right:auto; left:2px; bottom:-34px}
+  .note{right:6px; bottom:-38px}
+}
+@media (min-width:900px){
+  .hero{grid-template-columns:1fr 1.05fr; overflow:visible; overflow-x:clip}
+  .hero-text{padding-top:10px}
+  .hero-collage{min-height:660px; max-width:640px; justify-self:end; margin-right:calc(-1 * clamp(0px, 4vw, 70px))}
+  .carpa3d{top:-6%; right:-14%; width:100%}
+  .p-main{left:-6%; top:40%; width:220px}
+  .p-side{right:8%; top:62%; width:200px}
+  .swatches{right:auto; left:34%; bottom:2%}
+  .note{right:-4%; bottom:-2%}
+}
+
+/* --- servicios: banda de toldo de vidrio + tarjetas de vidrio esmerilado --- */
+.services{background-color:#BBD4E7;
+  background-image:radial-gradient(rgba(255,255,255,.55) 2px, transparent 2.6px), radial-gradient(rgba(255,255,255,.55) 2px, transparent 2.6px);
+  background-size:30px 30px; background-position:0 0, 15px 15px;
+  padding-top:calc(min(26vw, 300px) + 24px); overflow:hidden}
+.services::before{display:none}
+.vidrio-band{position:absolute; top:0; left:0; right:0; height:min(26vw,300px); background:url("media/v2/toldo-vidrio.webp") center top / cover no-repeat; pointer-events:none;
+  -webkit-mask-image:linear-gradient(#000 78%, transparent); mask-image:linear-gradient(#000 78%, transparent)}
+.services > *:not(.vidrio-band){position:relative; z-index:1}
+.srv{background:rgba(255,255,255,.34); -webkit-backdrop-filter:blur(16px) saturate(140%); backdrop-filter:blur(16px) saturate(140%);
+  border:1px solid rgba(255,255,255,.75); box-shadow:inset 0 1px 0 rgba(255,255,255,.8), 0 24px 40px -28px rgba(40,70,110,.55)}
+.srv-tags li{background:rgba(255,255,255,.55); border-color:rgba(255,255,255,.9)}
+.services .section-sub{color:#4B2A33}
+
+/* --- contacto: botones de vidrio sobre vino --- */
+.contact .btn-ghost{background:rgba(255,255,255,.1); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.45)}
+.contact .btn-ghost:hover{background:rgba(255,255,255,.2)}
+.crew-card{transition:transform .4s ease, box-shadow .4s ease}
+@media (hover:hover){ .crew-card:hover{transform:translateY(-4px)} }
+
+/* --- aparecer al hacer scroll --- */
+.js-reveal .reveal{opacity:0; transform:translateY(28px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+.js-reveal .reveal.is-in{opacity:1; transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .carpa3d-float{animation:none}
+  .carpa3d img{transition:none; transform:none}
+  .js-reveal .reveal{opacity:1; transform:none; transition:none}
+}
+
+/* Two reveal observers coexist with v1; either completion class must show cards. */
+.js-reveal .reveal.in, .js-reveal .reveal.is-in{opacity:1; transform:none}
+.services > .vidrio-band{max-width:none; margin:0}
